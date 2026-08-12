@@ -16,6 +16,8 @@ class ZendureDevice extends Homey.Device {
 
   private currentValues: {
     outputHomePower?: number;
+    packInputPower?: number;
+    outputPackPower?: number;
     gridInputPower?: number;
     solarInputPower?: number;
     gridOffPower?: number;
@@ -290,6 +292,8 @@ class ZendureDevice extends Homey.Device {
 
       const {
         outputHomePower,
+        packInputPower,
+        outputPackPower,
         gridInputPower,
         solarInputPower,
         gridOffPower,
@@ -302,8 +306,14 @@ class ZendureDevice extends Homey.Device {
         gridReverse,
       } = result.properties;
 
+      // Battery charge/discharge at pack level. Fall back to AC fields if missing.
+      const batteryDischarge = packInputPower ?? outputHomePower;
+      const batteryCharge = outputPackPower ?? gridInputPower;
+
       this.currentValues = {
         outputHomePower: outputHomePower > 0 ? outputHomePower + this.getOutputCorrection() : outputHomePower,
+        packInputPower: batteryDischarge > 0 ? batteryDischarge + this.getOutputCorrection() : batteryDischarge,
+        outputPackPower: batteryCharge,
         gridInputPower,
         solarInputPower,
         gridOffPower,
@@ -353,7 +363,7 @@ class ZendureDevice extends Homey.Device {
 
       this.processCurrentValues();
 
-      const powerPerHour = this.currentValues.gridInputPower || -this.currentValues.outputHomePower;
+      const powerPerHour = (this.currentValues.outputPackPower || 0) - (this.currentValues.packInputPower || 0);
       if (this.lastPowerMeter && this.lastPowerMeterValue !== undefined) {
         const avgPowerPerHour = (powerPerHour + this.lastPowerMeterValue) / 2;
         let timeDelta = (Date.now() - this.lastPowerMeter) / 1000;
@@ -395,11 +405,11 @@ class ZendureDevice extends Homey.Device {
 
   private processCurrentValues() {
     if (this.currentValues.outputHomePower !== undefined && this.currentValues.gridInputPower !== undefined && this.currentValues.electricLevel !== undefined && this.currentValues.minSoc !== undefined && this.currentValues.hyperTmp !== undefined)  {
-      this.log(`Power: ${this.currentValues.outputHomePower} ${this.currentValues.gridInputPower} ${this.currentValues.electricLevel} ${this.currentValues.minSoc}`);
+      this.log(`Power: home=${this.currentValues.outputHomePower} packIn=${this.currentValues.packInputPower} packOut=${this.currentValues.outputPackPower} grid=${this.currentValues.gridInputPower} soc=${this.currentValues.electricLevel} minSoc=${this.currentValues.minSoc}`);
       this.setCapabilityValue('measure_power', this.currentValues.gridInputPower || -this.currentValues.outputHomePower)
         .catch(this.error.bind(this));
-      this.setCapabilityValue('measure_power.charge', this.currentValues.gridInputPower || 0).catch(this.error.bind(this));
-      this.setCapabilityValue('measure_power.discharge', this.currentValues.outputHomePower || 0).catch(this.error.bind(this));
+      this.setCapabilityValue('measure_power.charge', this.currentValues.outputPackPower || 0).catch(this.error.bind(this));
+      this.setCapabilityValue('measure_power.discharge', this.currentValues.packInputPower || 0).catch(this.error.bind(this));
       this.setCapabilityValue('measure_power.solar', this.currentValues.solarInputPower ?? 0).catch(this.error.bind(this));
       this.setCapabilityValue('measure_power.offgrid', this.currentValues.gridOffPower ?? 0).catch(this.error.bind(this));
       this.setCapabilityValue('pass_mode', String(this.currentValues.passMode ?? 0)).catch(this.error.bind(this));
