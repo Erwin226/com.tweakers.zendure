@@ -49,5 +49,8 @@
   },
   "1.0.16": {
     "en": "Fix multi device flow support & improve stability"
+  },
+  "1.0.17": {
+    "en": "New options for Zendure devices with connected solar panels."
   }
 }
