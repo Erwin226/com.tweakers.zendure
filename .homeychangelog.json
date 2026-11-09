@@ -53,4 +53,7 @@
   "1.0.17": {
     "en": "New options for Zendure devices with connected solar panels."
   }
+  "1.0.18": {
+    "en": "Add support for 1600AC+ and 800 Plus"
+  }
 }
