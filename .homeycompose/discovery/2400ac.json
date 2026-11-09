@@ -1,1 +1,8 @@
-
+{
+  "type": "mdns-sd",
+  "mdns-sd": {
+    "name": "zendure",
+    "protocol": "tcp"
+  },
+  "id": "{{name}}"
+}
