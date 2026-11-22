@@ -10,6 +10,10 @@
         "en": "Set power to [[power]] watts",
         "nl": "Vermogen instellen op [[power]] watt"
       },
+      "hint": {
+        "en": "Set the power of the battery. Positive values discharge the battery, negative values charge the battery.",
+        "nl": "Stel het vermogen van de batterij in. Positieve waarden ontladen de batterij, negatieve waarden laden de batterij op."
+      },
       "args": [
         {
           "type": "number",
@@ -62,8 +66,8 @@
     {
       "id": "set-min-soc",
       "title": {
-        "en": "Set minimum SOC (sticky floor)",
-        "nl": "Minimum-SOC instellen (sticky vloer)"
+        "en": "Set minimum SOC",
+        "nl": "Minimum-SOC instellen"
       },
       "titleFormatted": {
         "en": "Set min SOC to [[percent]]% (Zenki refuses to discharge below)",

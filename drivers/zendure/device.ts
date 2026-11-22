@@ -34,14 +34,28 @@ class ZendureDevice extends Homey.Device {
   }
 
   async onDiscoveryAvailable(discoveryResult: DiscoveryResultMDNSSD) {
+    if (!this.isValidIp(discoveryResult.address)) {
+      this.log(`Ignoring invalid discovery address: ${discoveryResult.address}`);
+      return;
+    }
+
     this.ip = discoveryResult.address;
-    this.setStoreValue('ip', discoveryResult.address);
+    await this.setStoreValue('ip', discoveryResult.address);
+    await this.setSettings({ ip_address: discoveryResult.address });
     this.log(`Discovery available: ${JSON.stringify(discoveryResult)}`);
     this.startPolling();
   }
 
-  onDiscoveryAddressChanged(discoveryResult: DiscoveryResultMDNSSD) {
+  async onDiscoveryAddressChanged(discoveryResult: DiscoveryResultMDNSSD) {
+    if (!this.isValidIp(discoveryResult.address)) {
+      this.log(`Ignoring invalid discovery address: ${discoveryResult.address}`);
+      return;
+    }
+
     this.ip = discoveryResult.address;
+    await this.setStoreValue('ip', discoveryResult.address);
+    await this.setSettings({ ip_address: discoveryResult.address });
+    this.log(`Discovery address changed: ${discoveryResult.address}`);
   }
 
   onDiscoveryLastSeenChanged(discoveryResult: DiscoveryResultMDNSSD) {
@@ -84,7 +98,20 @@ class ZendureDevice extends Homey.Device {
     }
 
     // Load persistent meter values from storage
-    this.ip = this.getStoreValue('ip') || this.getData().address;
+    const configuredIp = this.getSetting('ip_address');
+    const storedIp = this.getStoreValue('ip');
+    const dataAddress = this.getData().address;
+    this.ip = undefined;
+    if (this.isValidIp(configuredIp)) {
+      this.ip = configuredIp;
+    } else if (this.isValidIp(storedIp)) {
+      this.ip = storedIp;
+    } else if (this.isValidIp(dataAddress)) {
+      this.ip = dataAddress;
+    }
+    if (this.isValidIp(this.ip) && configuredIp !== this.ip) {
+      await this.setSettings({ ip_address: this.ip });
+    }
     this.sn = this.getStoreValue('sn');
     this.chargeMeter = this.getStoreValue('chargeMeter') || 0;
     this.dischargeMeter = this.getStoreValue('dischargeMeter') || 0;
@@ -467,6 +494,28 @@ class ZendureDevice extends Homey.Device {
     changedKeys: string[];
   }): Promise<string | void> {
     this.log('MyDevice settings were changed');
+
+    if (changedKeys.includes('ip_address')) {
+      const configuredIp = String(newSettings.ip_address || '').trim();
+      if (!this.isValidIp(configuredIp)) {
+        throw new Error('Invalid IPv4 address');
+      }
+
+      this.ip = configuredIp;
+      await this.setStoreValue('ip', configuredIp);
+      this.log(`IP address changed to ${configuredIp}`);
+      await this.pollDevice();
+      this.startPolling();
+    }
+  }
+
+  private isValidIp(ip: unknown): ip is string {
+    if (typeof ip !== 'string') return false;
+    const normalizedIp = ip.trim();
+    if (normalizedIp === '0.0.0.0') return false;
+    const parts = normalizedIp.split('.');
+    return parts.length === 4
+      && parts.every(part => /^\d{1,3}$/.test(part) && Number(part) <= 255);
   }
 
   private getMinSocCorrectionEnabled(): boolean {

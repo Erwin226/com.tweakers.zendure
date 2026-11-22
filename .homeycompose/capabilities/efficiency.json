@@ -1,7 +1,7 @@
 {
     "type": "number",
     "title": { "en": "RTE (total)", "nl": "RTE (totaal)" },
-    "units": { "en": "%" },
+    "units": { "en": "%", "nl": "%" },
     "min": 0,
     "max": 100,
     "uiComponent": "sensor",

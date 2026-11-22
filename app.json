@@ -1,17 +1,19 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.tweakers.zendure",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Zendure Local"
+    "en": "Zendure Local",
+    "nl": "Zendure Local"
   },
   "description": {
-    "en": "Your batteries, your rules"
+    "en": "Your batteries, your rules",
+    "nl": "Jouw batterijen, jouw regels"
   },
   "category": [
     "energy"
@@ -24,14 +26,15 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Stef Kampen"
+    "name": "Erwin"
   },
-  "source": "https://github.com/stefkampen/com.tweakers.zendure",
+  "source": "https://github.com/Erwin226/com.tweakers.zendure",
   "support": "https://gathering.tweakers.net/forum/list_messages/2306860",
   "drivers": [
     {
       "name": {
-        "en": "Smart Meter"
+        "en": "Smart Meter",
+        "nl": "Slimme Meter"
       },
       "class": "sensor",
       "capabilities": [
@@ -98,7 +101,8 @@
     },
     {
       "name": {
-        "en": "2400AC / 800Pro"
+        "en": "Solarflow Battery",
+        "nl": "Solarflow Batterij"
       },
       "class": "battery",
       "capabilities": [
@@ -200,17 +204,33 @@
         {
           "type": "group",
           "label": {
-            "en": "Battery Settings"
+            "en": "Battery Settings",
+            "nl": "Batterijinstellingen"
           },
           "children": [
+            {
+              "id": "ip_address",
+              "type": "text",
+              "label": {
+                "en": "IP Address of the battery",
+                "nl": "IP-adres van de batterij"
+              },
+              "hint": {
+                "en": "Enter the IP address of the battery.",
+                "nl": "Voer het IP-adres van de batterij in."
+              },
+              "value": ""
+            },
             {
               "id": "minsoc_correction",
               "type": "checkbox",
               "label": {
-                "en": "Minimum SoC Correction"
+                "en": "Minimum SoC Correction",
+                "nl": "Minimum SoC-correctie"
               },
               "hint": {
-                "en": "Enable correction for minimum state of charge (SoC). When enabled, the device will adjust battery percentage to exclude the minimum state of charge. Helps with efficiency calculations."
+                "en": "Enable correction for minimum state of charge (SoC). When enabled, the device will adjust battery percentage to exclude the minimum state of charge. Helps with efficiency calculations.",
+                "nl": "Schakel correctie voor minimale staat van lading (SoC) in. Wanneer ingeschakeld, past het apparaat het batterijpercentage aan om de minimale staat van lading uit te sluiten. Helpt bij efficiëntieberekeningen."
               },
               "value": false
             },
@@ -218,10 +238,12 @@
               "id": "output_correction",
               "type": "number",
               "label": {
-                "en": "Output wattage correction"
+                "en": "Output power correction",
+                "nl": "Correctie uitgangsvermogen"
               },
               "hint": {
-                "en": "Correction for output wattage. When enabled, the device will adjust output wattage with this number of watts. Helps with efficiency calculations."
+                "en": "Correction for output power. When enabled, the device will adjust output power with this number of watts. Helps with efficiency calculations.",
+                "nl": "Correctie voor uitgangsvermogen. Wanneer ingeschakeld, past het apparaat het uitgangsvermogen aan met dit aantal watt. Helpt bij efficiëntieberekeningen."
               },
               "value": 0
             }
@@ -242,6 +264,10 @@
         "titleFormatted": {
           "en": "Set power to [[power]] watts",
           "nl": "Vermogen instellen op [[power]] watt"
+        },
+        "hint": {
+          "en": "Set the power of the battery. Positive values discharge the battery, negative values charge the battery.",
+          "nl": "Stel het vermogen van de batterij in. Positieve waarden ontladen de batterij, negatieve waarden laden de batterij op."
         },
         "args": [
           {
@@ -312,8 +338,8 @@
       {
         "id": "set-min-soc",
         "title": {
-          "en": "Set minimum SOC (sticky floor)",
-          "nl": "Minimum-SOC instellen (sticky vloer)"
+          "en": "Set minimum SOC",
+          "nl": "Minimum-SOC instellen"
         },
         "titleFormatted": {
           "en": "Set min SOC to [[percent]]% (Zenki refuses to discharge below)",
@@ -450,7 +476,8 @@
         "nl": "RTE (totaal)"
       },
       "units": {
-        "en": "%"
+        "en": "%",
+        "nl": "%"
       },
       "min": 0,
       "max": 100,

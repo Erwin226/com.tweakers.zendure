@@ -1,6 +1,7 @@
 {
   "name": {
-    "en": "Smart Meter"
+    "en": "Smart Meter",
+    "nl": "Slimme Meter"
   },
   "class": "sensor",
   "capabilities": ["measure_power","measure_power.p1","measure_power.p2","measure_power.p3"],

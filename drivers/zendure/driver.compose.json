@@ -1,6 +1,7 @@
 {
   "name": {
-    "en": "2400AC / 800Pro"
+    "en": "Solarflow Battery",
+    "nl": "Solarflow Batterij"
   },
   "class": "battery",
   "capabilities": [
@@ -19,26 +20,44 @@
   ],
   "capabilitiesOptions": {
     "measure_power.charge": {
-      "title": { "en": "Charge power", "nl": "Laadvermogen" },
+      "title": {
+        "en": "Charge power",
+        "nl": "Laadvermogen"
+      },
       "insights": true
     },
     "measure_power.discharge": {
-      "title": { "en": "Discharge power", "nl": "Ontlaadvermogen" },
+      "title": {
+        "en": "Discharge power",
+        "nl": "Ontlaadvermogen"
+      },
       "insights": true
     },
     "measure_power.solar": {
-      "title": { "en": "Solar input power", "nl": "Zonne-invoervermogen" },
+      "title": {
+        "en": "Solar input power",
+        "nl": "Zonne-invoervermogen"
+      },
       "insights": true
     },
     "measure_power.offgrid": {
-      "title": { "en": "Off-grid output power", "nl": "Off-grid uitgangsvermogen" },
+      "title": {
+        "en": "Off-grid output power",
+        "nl": "Off-grid uitgangsvermogen"
+      },
       "insights": true
     },
     "meter_power.charged": {
-      "title": { "en": "Total charged", "nl": "Totaal opgeladen" }
+      "title": {
+        "en": "Total charged",
+        "nl": "Totaal opgeladen"
+      }
     },
     "meter_power.discharged": {
-      "title": { "en": "Total discharged", "nl": "Totaal ontladen" }
+      "title": {
+        "en": "Total discharged",
+        "nl": "Totaal ontladen"
+      }
     }
   },
   "platforms": [
@@ -53,24 +72,28 @@
   },
   "discovery": "zendure",
   "pair": [
-      {
-        "id": "loading",
-        "template": "loading"
+    {
+      "id": "loading",
+      "template": "loading"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
       },
-      {
-        "id": "list_devices",
-        "template": "list_devices",
-        "navigation": { "next": "add_devices" },
-        "options": { "singular": true }
-      },
-      {
-        "id": "manual_ip"
-      },
-      {
-        "id": "add_devices",
-        "template": "add_devices"
+      "options": {
+        "singular": true
       }
-    ],
+    },
+    {
+      "id": "manual_ip"
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
   "energy": {
     "homeBattery": true,
     "meterPowerImportedCapability": "meter_power.charged",
@@ -80,17 +103,33 @@
     {
       "type": "group",
       "label": {
-        "en": "Battery Settings"
+        "en": "Battery Settings",
+        "nl": "Batterijinstellingen"
       },
       "children": [
+        {
+          "id": "ip_address",
+          "type": "text",
+          "label": {
+            "en": "IP Address of the battery",
+            "nl": "IP-adres van de batterij"
+          },
+          "hint": {
+            "en": "Enter the IP address of the battery.",
+            "nl": "Voer het IP-adres van de batterij in."
+          },
+          "value": ""
+        },
         {
           "id": "minsoc_correction",
           "type": "checkbox",
           "label": {
-            "en": "Minimum SoC Correction"
+            "en": "Minimum SoC Correction",
+            "nl": "Minimum SoC-correctie"
           },
           "hint": {
-            "en": "Enable correction for minimum state of charge (SoC). When enabled, the device will adjust battery percentage to exclude the minimum state of charge. Helps with efficiency calculations."
+            "en": "Enable correction for minimum state of charge (SoC). When enabled, the device will adjust battery percentage to exclude the minimum state of charge. Helps with efficiency calculations.",
+            "nl": "Schakel correctie voor minimale staat van lading (SoC) in. Wanneer ingeschakeld, past het apparaat het batterijpercentage aan om de minimale staat van lading uit te sluiten. Helpt bij efficiëntieberekeningen."
           },
           "value": false
         },
@@ -98,10 +137,12 @@
           "id": "output_correction",
           "type": "number",
           "label": {
-            "en": "Output wattage correction"
+            "en": "Output power correction",
+            "nl": "Correctie uitgangsvermogen"
           },
           "hint": {
-            "en": "Correction for output wattage. When enabled, the device will adjust output wattage with this number of watts. Helps with efficiency calculations."
+            "en": "Correction for output power. When enabled, the device will adjust output power with this number of watts. Helps with efficiency calculations.",
+            "nl": "Correctie voor uitgangsvermogen. Wanneer ingeschakeld, past het apparaat het uitgangsvermogen aan met dit aantal watt. Helpt bij efficiëntieberekeningen."
           },
           "value": 0
         }

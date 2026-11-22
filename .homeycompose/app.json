@@ -1,16 +1,18 @@
 {
   "id": "com.tweakers.zendure",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Zendure Local"
+    "en": "Zendure Local",
+    "nl": "Zendure Local"
   },
   "description": {
-    "en": "Your batteries, your rules"
+    "en": "Your batteries, your rules",
+    "nl": "Jouw batterijen, jouw regels"
   },
   "category": [
     "energy"
@@ -23,8 +25,8 @@
     "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Stef Kampen"
+    "name": "Erwin"
   },
-  "source": "https://github.com/stefkampen/com.tweakers.zendure",
+  "source": "https://github.com/Erwin226/com.tweakers.zendure",
   "support": "https://gathering.tweakers.net/forum/list_messages/2306860"
 }
