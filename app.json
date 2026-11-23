@@ -204,8 +204,8 @@
         {
           "type": "group",
           "label": {
-            "en": "Battery Settings",
-            "nl": "Batterijinstellingen"
+            "en": "Battery",
+            "nl": "Batterij"
           },
           "children": [
             {
