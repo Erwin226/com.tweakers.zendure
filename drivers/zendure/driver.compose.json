@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Solarflow Battery",
-    "nl": "Solarflow Batterij"
+    "nl": "Solarflow Batterij",
+    "de": "Solarflow Batterie",
+    "fr": "Batterie Solarflow"
   },
   "class": "battery",
   "capabilities": [
@@ -22,41 +24,53 @@
     "measure_power.charge": {
       "title": {
         "en": "Charge power",
-        "nl": "Laadvermogen"
+        "nl": "Laadvermogen",
+        "de": "Ladeleistung",
+        "fr": "Puissance de charge"
       },
       "insights": true
     },
     "measure_power.discharge": {
       "title": {
         "en": "Discharge power",
-        "nl": "Ontlaadvermogen"
+        "nl": "Ontlaadvermogen",
+        "de": "Entladeleistung",
+        "fr": "Puissance de décharge"
       },
       "insights": true
     },
     "measure_power.solar": {
       "title": {
         "en": "Solar input power",
-        "nl": "Zonne-invoervermogen"
+        "nl": "Zonne-invoervermogen",
+        "de": "Solar-Eingangsleistung",
+        "fr": "Puissance d'entrée solaire"
       },
       "insights": true
     },
     "measure_power.offgrid": {
       "title": {
         "en": "Off-grid output power",
-        "nl": "Off-grid uitgangsvermogen"
+        "nl": "Off-grid uitgangsvermogen",
+        "de": "Off-Grid Ausgangsleistung",
+        "fr": "Puissance de sortie off-grid"
       },
       "insights": true
     },
     "meter_power.charged": {
       "title": {
         "en": "Total charged",
-        "nl": "Totaal opgeladen"
+        "nl": "Totaal opgeladen",
+        "de": "Gesamt geladen",
+        "fr": "Total chargé"
       }
     },
     "meter_power.discharged": {
       "title": {
         "en": "Total discharged",
-        "nl": "Totaal ontladen"
+        "nl": "Totaal ontladen",
+        "de": "Gesamt entladen",
+        "fr": "Total déchargé"
       }
     }
   },
@@ -104,7 +118,9 @@
       "type": "group",
       "label": {
         "en": "Battery",
-        "nl": "Batterij"
+        "nl": "Batterij",
+        "de": "Batterie",
+        "fr": "Batterie"
       },
       "children": [
         {
@@ -112,11 +128,15 @@
           "type": "text",
           "label": {
             "en": "IP Address of the battery",
-            "nl": "IP-adres van de batterij"
+            "nl": "IP-adres van de batterij",
+            "de": "IP-Adresse der Batterie",
+            "fr": "Adresse IP de la batterie"
           },
           "hint": {
             "en": "Enter the IP address of the battery.",
-            "nl": "Voer het IP-adres van de batterij in."
+            "nl": "Voer het IP-adres van de batterij in.",
+            "de": "Geben Sie die IP-Adresse der Batterie ein.",
+            "fr": "Entrez l'adresse IP de la batterie."
           },
           "value": ""
         },
@@ -125,11 +145,15 @@
           "type": "checkbox",
           "label": {
             "en": "Minimum SoC Correction",
-            "nl": "Minimum SoC-correctie"
+            "nl": "Minimum SoC-correctie",
+            "de": "Minimum SoC-Korrektur",
+            "fr": "Correction du SoC minimum"
           },
           "hint": {
             "en": "Enable correction for minimum state of charge (SoC). When enabled, the device will adjust battery percentage to exclude the minimum state of charge. Helps with efficiency calculations.",
-            "nl": "Schakel correctie voor minimale staat van lading (SoC) in. Wanneer ingeschakeld, past het apparaat het batterijpercentage aan om de minimale staat van lading uit te sluiten. Helpt bij efficiëntieberekeningen."
+            "nl": "Schakel correctie voor minimale staat van lading (SoC) in. Wanneer ingeschakeld, past het apparaat het batterijpercentage aan om de minimale staat van lading uit te sluiten. Helpt bij efficiëntieberekeningen.",
+            "de": "Aktivieren Sie die Korrektur für den minimalen Ladezustand (SoC). Wenn aktiviert, passt das Gerät den Batterieprozentsatz an, um den minimalen Ladezustand auszuschließen. Hilft bei Effizienzberechnungen.",
+            "fr": "Activez la correction pour l'état de charge minimum (SoC). Lorsqu'activé, l'appareil ajustera le pourcentage de batterie pour exclure l'état de charge minimum. Aide aux calculs d'efficacité."
           },
           "value": false
         },
@@ -138,11 +162,15 @@
           "type": "number",
           "label": {
             "en": "Output power correction",
-            "nl": "Correctie uitgangsvermogen"
+            "nl": "Correctie uitgangsvermogen",
+            "de": "Korrektur der Ausgangsleistung",
+            "fr": "Correction de la puissance de sortie"
           },
           "hint": {
             "en": "Correction for output power. When enabled, the device will adjust output power with this number of watts. Helps with efficiency calculations.",
-            "nl": "Correctie voor uitgangsvermogen. Wanneer ingeschakeld, past het apparaat het uitgangsvermogen aan met dit aantal watt. Helpt bij efficiëntieberekeningen."
+            "nl": "Correctie voor uitgangsvermogen. Wanneer ingeschakeld, past het apparaat het uitgangsvermogen aan met dit aantal watt. Helpt bij efficiëntieberekeningen.",
+            "de": "Korrektur für die Ausgangsleistung. Wenn aktiviert, passt das Gerät die Ausgangsleistung mit dieser Anzahl an Watt an. Hilft bei Effizienzberechnungen.",
+            "fr": "Correction de la puissance de sortie. Lorsqu'activé, l'appareil ajustera la puissance de sortie avec ce nombre de watts. Aide aux calculs d'efficacité."
           },
           "value": 0
         }

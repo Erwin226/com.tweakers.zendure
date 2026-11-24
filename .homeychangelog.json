@@ -1,62 +1,128 @@
 {
   "1.0.0": {
-    "en": "Initial publish"
+    "en": "Initial publish",
+    "nl": "Eerste publicatie",
+    "de": "Erste Veröffentlichung",
+    "fr": "Première publication"
   },
   "1.0.1": {
-    "en": "Github"
+    "en": "Github",
+    "nl": "Github",
+    "de": "Github",
+    "fr": "Github"
   },
   "1.0.2": {
-    "en": "Marked battery as Home Battery"
+    "en": "Marked battery as Home Battery",
+    "nl": "Batterij gemarkeerd als Thuisbattery",
+    "de": "Batterie als Hausbatterie markiert",
+    "fr": "Batterie marquée comme batterie domestique"
   },
   "1.0.3": {
-    "en": "Added ability to have State of Charge exclude the minimal SoC value."
+    "en": "Added ability to have State of Charge exclude the minimal SoC value.",
+    "nl": "Mogelijkheid toegevoegd om State of Charge te gebruiken zonder minimale SoC-waarde.",
+    "de": "Fähigkeit hinzugefügt, den Ladezustand ohne minimalen SoC-Wert zu verwenden.",
+    "fr": "Ajout de la possibilité d'utiliser l'état de charge sans valeur minimale de SoC."
   },
   "1.0.4": {
-    "en": "New icon"
+    "en": "New icon",
+    "nl": "Nieuw icoon",
+    "de": "Neues Symbol",
+    "fr": "Nouvelle icône"
   },
   "1.0.5": {
-    "en": "Guestimate used energy for the Homey energy page."
+    "en": "Guestimate used energy for the Homey energy page.",
+    "nl": "Geschat verbruik voor de Homey energiepagina.",
+    "de": "Geschätzter Energieverbrauch für die Homey Energie-Seite.",
+    "fr": "Estimation de l'énergie utilisée pour la page d'énergie de Homey."
   },
   "1.0.6": {
-    "en": "Added functionalities for Round Trip Efficiency"
+    "en": "Added functionalities for Round Trip Efficiency",
+    "nl": "Functionaliteiten toegevoegd voor Round Trip Efficiëntie (RTT)",
+    "de": "Funktionen für Rundreise-Effizienz hinzugefügt",
+    "fr": "Fonctionnalités ajoutées pour l'efficacité du voyage aller-retour"
   },
   "1.0.7": {
-    "en": "Remove setting smartMode for now, causes some issues"
+    "en": "Remove setting smartMode for now, causes some issues",
+    "nl": "Instelling smartMode tijdelijk verwijderd, veroorzaakt enkele problemen",
+    "de": "Einstellung smartMode vorerst entfernt, verursacht einige Probleme",
+    "fr": "Suppression du paramètre smartMode pour le moment, provoque certains problèmes"
   },
   "1.0.8": {
-    "en": "Improve compatibility with older Homeys, output adjustment setting (to align output with your smart meter)"
+    "en": "Improve compatibility with older Homeys, output adjustment setting (to align output with your smart meter)",
+    "nl": "Compatibiliteit verbeterd met oudere Homeys, instelling voor outputaanpassing (om output af te stemmen met slimme meter)",
+    "de": "Kompatibilität mit älteren Homeys verbessert, Einstellung für Ausgabeanpassung (um Ausgabe mit deinem Smart Meter abzustimmen)",
+    "fr": "Amélioration de la compatibilité avec les anciens Homeys, réglage de l'ajustement de la sortie (pour aligner la sortie avec ton compteur intelligent)"
   },
   "1.0.9": {
-    "en": "Add additional logging for debugging"
+    "en": "Add additional logging for debugging",
+    "nl": "Extra logging toegevoegd voor debugging",
+    "de": "Zusätzliche Protokollierung für das Debugging hinzugefügt",
+    "fr": "Ajout d'une journalisation supplémentaire pour le débogage"
   },
   "1.0.10": {
-    "en": "Store ip for increased reliability"
+    "en": "Store ip for increased reliability",
+    "nl": "IP-adres opslaan voor verhoogde betrouwbaarheid",
+    "de": "IP-Adresse speichern für erhöhte Zuverlässigkeit",
+    "fr": "Stockage de l'IP pour une fiabilité accrue"
   },
   "1.0.11": {
-    "en": "Improve stability"
+    "en": "Improve stability",
+    "nl": "Stabiliteit verbeterd",
+    "de": "Stabilität verbessert",
+    "fr": "Amélioration de la stabilité"
   },
   "1.0.12": {
-    "en": "Improve stability"
+    "en": "Improve stability",
+    "nl": "Stabiliteit verbeterd",
+    "de": "Stabilität verbessert",
+    "fr": "Amélioration de la stabilité"
   },
   "1.0.13": {
-    "en": "Adding support for Smart Meter devices"
+    "en": "Adding support for Smart Meter devices",
+    "nl": "Ondersteuning toegevoegd voor Slimme Meter apparaten",
+    "de": "Unterstützung für Smart Meter Geräte hinzugefügt",
+    "fr": "Ajout de la prise en charge des appareils de comptage intelligent"
   },
   "1.0.14": {
-    "en": "Add option to manually add batteries by ip when not found in network"
+    "en": "Add option to manually add batteries by ip when not found in network",
+    "nl": "Optie toegevoegd om batterijen handmatig toe te voegen via IP als ze niet gevonden worden in het netwerk",
+    "de": "Option hinzugefügt, um Batterien manuell per IP hinzuzufügen, wenn sie nicht im Netzwerk gefunden werden",
+    "fr": "Ajout d'une option pour ajouter manuellement des batteries par IP lorsque celles-ci ne sont pas trouvées dans le réseau"
   },
   "1.0.15": {
-    "en": "Adding smartMode logic to reduce disk load"
+    "en": "Adding smartMode logic to reduce disk load",
+    "nl": "SmartMode logica toegevoegd om schijfbelasting te verminderen",
+    "de": "SmartMode-Logik hinzugefügt, um die Festplattenlast zu reduzieren",
+    "fr": "Ajout de la logique smartMode pour réduire la charge du disque"
   },
   "1.0.16": {
-    "en": "Fix multi device flow support & improve stability"
+    "en": "Fix multi device flow support & improve stability",
+    "nl": "Problemen opgelost met ondersteuning voor multi-apparaat flows & stabiliteit verbeterd",
+    "de": "Fehler in der Unterstützung für Multi-Device-Flows behoben & Stabilität verbessert",
+    "fr": "Correction de la prise en charge des flux multi-appareils & amélioration de la stabilité"
   },
   "1.0.17": {
-    "en": "New options for Zendure devices with connected solar panels."
+    "en": "New options for Zendure devices with connected solar panels.",
+    "nl": "Nieuwe opties voor Zendure apparaten met aangesloten zonnepanelen.",
+    "de": "Neue Optionen für Zendure-Geräte mit verbundenen Solarmodulen.",
+    "fr": "Nouvelles options pour les appareils Zendure avec des panneaux solaires connectés."
   },
   "1.0.18": {
-    "en": "Add other Solarflow series batteries. Add option to change IP-address."
+    "en": "Add other Solarflow series batteries. Add option to change IP-address.",
+    "nl": "Andere Solarflow series batterijen toegevoegd. Optie toegevoegd om IP-adres te wijzigen.",
+    "de": "Andere Solarflow-Serien-Batterien hinzugefügt. Option zum Ändern der IP-Adresse hinzugefügt.",
+    "fr": "Ajout de batteries d'autres séries Solarflow. Ajout d'une option pour modifier l'adresse IP."
   },
   "1.0.19": {
-    "en": "Small optimizations, and improved readme.txt"
+    "en": "Small optimizations, and improved readme.txt",
+    "nl": "Kleine optimalisaties, en verbeterde readme.txt",
+    "de": "Kleine Optimierungen und verbesserte readme.txt",
+    "fr": "Petites optimisations et amélioration du readme.txt"
+  },
+  "1.1.0": {
+    "en": "French and German translations for all flows and settings.",
+    "nl": "Franse en Duitse vertalingen voor alle flows en instellingen.",
+    "de": "Französische und deutsche Übersetzungen für alle Flows und Einstellungen.",
+    "fr": "Traductions en français et en allemand pour tous les flux et paramètres."
   }
 }

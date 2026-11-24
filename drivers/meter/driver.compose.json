@@ -1,22 +1,24 @@
 {
   "name": {
     "en": "Smart Meter",
-    "nl": "Slimme Meter"
+    "nl": "Slimme Meter",
+    "de": "Smart Meter",
+    "fr": "Compteur intelligent"
   },
   "class": "sensor",
   "capabilities": ["measure_power","measure_power.p1","measure_power.p2","measure_power.p3"],
   "capabilitiesOptions": {
     "measure_power": {
-      "title": { "en": "Total Power", "nl": "Totaal vermogen" }
+      "title": { "en": "Total Power", "nl": "Totaal vermogen", "de": "Gesamtleistung", "fr": "Puissance totale" }
     },
     "measure_power.p1": {
-      "title": { "en": "Phase 1 Power", "nl": "Fase 1 vermogen" }
+      "title": { "en": "Phase 1 Power", "nl": "Fase 1 vermogen", "de": "Phase 1 Leistung", "fr": "Puissance phase 1" }
     },
     "measure_power.p2": {
-      "title": { "en": "Phase 2 Power", "nl": "Fase 2 vermogen" }
+      "title": { "en": "Phase 2 Power", "nl": "Fase 2 vermogen", "de": "Phase 2 Leistung", "fr": "Puissance phase 2" }
     },
     "measure_power.p3": {
-      "title": { "en": "Phase 3 Power", "nl": "Fase 3 vermogen" }
+      "title": { "en": "Phase 3 Power", "nl": "Fase 3 vermogen", "de": "Phase 3 Leistung", "fr": "Puissance phase 3" }
     }
   },
   "platforms": [

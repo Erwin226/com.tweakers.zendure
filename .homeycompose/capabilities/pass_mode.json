@@ -1,10 +1,30 @@
 {
   "type": "enum",
-  "title": { "en": "Bypass mode", "nl": "Bypass-modus" },
+  "title": { 
+    "en": "Bypass mode", 
+    "nl": "Bypass-modus",
+    "de": "Bypass-Modus",
+    "fr": "Mode de contournement"
+   },
   "values": [
-    { "id": "0", "title": { "en": "Auto", "nl": "Auto" } },
-    { "id": "1", "title": { "en": "Off", "nl": "Uit" } },
-    { "id": "2", "title": { "en": "On", "nl": "Aan" } }
+    { "id": "0", "title": { 
+      "en": "Auto", 
+      "nl": "Auto",
+      "de": "Auto",
+      "fr": "Auto"
+      } },
+    { "id": "1", "title": { 
+      "en": "Off", 
+      "nl": "Uit",
+      "de": "Aus",
+      "fr": "Éteint"
+      } },
+    { "id": "2", "title": { 
+      "en": "On", 
+      "nl": "Aan",
+      "de": "Eingeschaltet",
+      "fr": "Allumé"
+      } }
   ],
   "uiComponent": "picker",
   "getable": true,

@@ -1,6 +1,6 @@
 {
   "id": "com.tweakers.zendure",
-  "version": "1.0.19",
+  "version": "1.1.0",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "platforms": [
@@ -8,11 +8,15 @@
   ],
   "name": {
     "en": "Zendure Local",
-    "nl": "Zendure Local"
+    "nl": "Zendure Local",
+    "de": "Zendure Local",
+    "fr": "Zendure Local"
   },
   "description": {
-    "en": "Your batteries, your rules",
-    "nl": "Jouw batterijen, jouw regels"
+    "en": "Your battery, your rules",
+    "nl": "Jouw batterij, jouw regels",
+    "de": "Ihre Batterie, Ihre Regeln",
+    "fr": "Votre batterie, vos règles"
   },
   "category": [
     "energy"

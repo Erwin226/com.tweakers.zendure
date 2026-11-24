@@ -4,15 +4,21 @@
       "id": "set-power",
       "title": {
         "en": "Set power",
-        "nl": "Vermogen instellen"
+        "nl": "Vermogen instellen",
+        "de": "Leistung einstellen",
+        "fr": "Régler la puissance"
       },
       "titleFormatted": {
         "en": "Set power to [[power]] watts",
-        "nl": "Vermogen instellen op [[power]] watt"
+        "nl": "Vermogen instellen op [[power]] watt",
+        "de": "Leistung auf [[power]] Watt einstellen",
+        "fr": "Régler la puissance à [[power]] watts"
       },
       "hint": {
         "en": "Set the power of the battery. Positive values discharge the battery, negative values charge the battery.",
-        "nl": "Stel het vermogen van de batterij in. Positieve waarden ontladen de batterij, negatieve waarden laden de batterij op."
+        "nl": "Stel het vermogen van de batterij in. Positieve waarden ontladen de batterij, negatieve waarden laden de batterij op.",
+        "de": "Stellen Sie die Leistung der Batterie ein. Positive Werte entladen die Batterie, negative Werte laden die Batterie auf.",
+        "fr": "Régler la puissance de la batterie. Les valeurs positives déchargent la batterie, les valeurs négatives la chargent."
       },
       "args": [
         {
@@ -20,7 +26,9 @@
           "name": "power",
           "placeholder": {
             "en": "800",
-            "nl": "800"
+            "nl": "800",
+            "de": "800",
+            "fr": "800"
           },
           "min": -2400,
           "max": 2400,
@@ -32,22 +40,30 @@
       "id": "reset-meters",
       "title": {
         "en": "Reset energy meters",
-        "nl": "Meterstanden op 0 zetten"
+        "nl": "Meterstanden op 0 zetten",
+        "de": "Energiezähler zurücksetzen",
+        "fr": "Réinitialiser les compteurs d'énergie"
       }
     },
     {
       "id": "set-output-limit",
       "title": {
         "en": "Set output limit (discharge cap)",
-        "nl": "Ontlaadlimiet instellen"
+        "nl": "Ontlaadlimiet instellen",
+        "de": "Ausgangsgrenze einstellen (Entladebegrenzung)",
+        "fr": "Définir la limite de sortie (plafond de décharge)"
       },
       "titleFormatted": {
         "en": "Cap discharge at [[limit]] W (0 = block discharge)",
-        "nl": "Ontladen begrenzen op [[limit]] W (0 = blokkeer ontladen)"
+        "nl": "Ontladen begrenzen op [[limit]] W (0 = blokkeer ontladen)",
+        "de": "Entladegrenze einstellen auf [[limit]] W (0 = Entladung blockieren)",
+        "fr": "Limiter la décharge à [[limit]] W (0 = bloquer la décharge)"
       },
       "hint": {
         "en": "Atomic write of outputLimit only. Does not touch inputLimit, smartMode or acMode. Use 0 to block discharge while allowing solar/grid charging.",
-        "nl": "Schrijft alleen outputLimit. Raakt inputLimit, smartMode en acMode niet aan. Gebruik 0 om ontladen te blokkeren terwijl zon/grid laden mag."
+        "nl": "Schrijft alleen outputLimit. Raakt inputLimit, smartMode en acMode niet aan. Gebruik 0 om ontladen te blokkeren terwijl zon/grid laden mag.",
+        "de": "Nur outputLimit wird atomar geschrieben. Berührt inputLimit, smartMode oder acMode nicht. Verwenden Sie 0, um die Entladung zu blockieren, während Solarenergie/Grid-Laden erlaubt ist.",
+        "fr": "Écriture atomique de outputLimit uniquement. Ne touche pas inputLimit, smartMode ou acMode. Utilisez 0 pour bloquer la décharge tout en autorisant le chargement solaire/grille."
       },
       "args": [
         {
@@ -55,7 +71,9 @@
           "name": "limit",
           "placeholder": {
             "en": "0",
-            "nl": "0"
+            "nl": "0",
+            "de": "0",
+            "fr": "0"
           },
           "min": 0,
           "max": 2400,
@@ -67,15 +85,21 @@
       "id": "set-min-soc",
       "title": {
         "en": "Set minimum SOC",
-        "nl": "Minimum-SOC instellen"
+        "nl": "Minimum-SOC instellen",
+        "de": "Minimum SoC einstellen",
+        "fr": "Définir le SoC minimum"
       },
       "titleFormatted": {
         "en": "Set min SOC to [[percent]]% (Zenki refuses to discharge below)",
-        "nl": "Minimum-SOC op [[percent]]% (Zenki ontlaadt niet dieper)"
+        "nl": "Minimum-SOC op [[percent]]% (Zenki ontlaadt niet dieper)",
+        "de": "Minimum SoC auf [[percent]]% einstellen (Zenki verweigert Entladung unterhalb)",
+        "fr": "Définir le SoC minimum à [[percent]]% (Zenki refuse de décharger en dessous)"
       },
       "hint": {
         "en": "Atomic write of minSoc only. Use as alternative discharge-blocker: set min-SOC to current SOC and Zenki refuses to discharge further. Reverts in HA take 'few minutes' (per Zendure-HA #838). Range clamped to 5-50% for battery health.",
-        "nl": "Schrijft alleen minSoc. Alternatief voor blokkade: zet min-SOC op huidige SOC en Zenki ontlaadt niet verder. Revert in HA duurt 'enkele minuten' (per Zendure-HA #838). Range geklemd op 5-50% voor batterijgezondheid."
+        "nl": "Schrijft alleen minSoc. Alternatief voor blokkade: zet min-SOC op huidige SOC en Zenki ontlaadt niet verder. Revert in HA duurt 'enkele minuten' (per Zendure-HA #838). Range geklemd op 5-50% voor batterijgezondheid.",
+        "de": "Nur minSoc wird atomar geschrieben. Als alternatives Entladeblocker verwenden: Setzen Sie min-SOC auf aktuellen SOC und Zenki verweigert weitere Entladung. Zurücksetzen in HA dauert 'einige Minuten' (gemäß Zendure-HA #838). Bereich auf 5-50% begrenzt für Batteriegesundheit.",
+        "fr": "Écriture atomique de minSoc uniquement. À utiliser comme bloqueur de décharge alternatif : définissez min-SOC sur le SOC actuel et Zenki refuse de décharger davantage. Les retours en arrière dans HA prennent 'quelques minutes' (selon Zendure-HA #838). Plage limitée à 5-50% pour la santé de la batterie."
       },
       "args": [
         {
@@ -83,7 +107,9 @@
           "name": "percent",
           "placeholder": {
             "en": "20",
-            "nl": "20"
+            "nl": "20",
+            "de": "20",
+            "fr": "20"
           },
           "min": 5,
           "max": 50,
@@ -95,24 +121,30 @@
       "id": "set-pass-mode",
       "title": {
         "en": "Set bypass mode",
-        "nl": "Bypass-modus instellen"
+        "nl": "Bypass-modus instellen",
+        "de": "Bypass-Modus einstellen",
+        "fr": "Définir le mode de contournement"
       },
       "titleFormatted": {
         "en": "Set bypass mode to [[mode]]",
-        "nl": "Bypass-modus op [[mode]]"
+        "nl": "Bypass-modus op [[mode]]",
+        "de": "Bypass-Modus auf [[mode]]",
+        "fr": "Définir le mode de contournement sur [[mode]]"
       },
       "hint": {
         "en": "Atomic write of passMode. Auto = follow firmware logic, Off = bypass disabled, On = force grid-passthrough (e.g. during low SOC or storm).",
-        "nl": "Schrijft alleen passMode. Auto = firmware bepaalt, Uit = bypass uit, Aan = grid-passthrough forceren (bv. bij lage SOC of onweer)."
+        "nl": "Schrijft alleen passMode. Auto = firmware bepaalt, Uit = bypass uit, Aan = grid-passthrough forceren (bv. bij lage SOC of onweer).",
+        "de": "Nur passMode wird atomar geschrieben. Auto = Firmware-Logik folgen, Aus = Bypass deaktiviert, Ein = Grid-Passthrough erzwingen (z.B. bei niedrigem SOC oder Sturm).",
+        "fr": "Écriture atomique de passMode. Auto = suivre la logique du firmware, Off = contournement désactivé, On = forcer le passage en réseau (par ex. pendant un faible SoC ou une tempête)."
       },
       "args": [
         {
           "type": "dropdown",
           "name": "mode",
           "values": [
-            { "id": "0", "label": { "en": "Auto", "nl": "Auto" } },
-            { "id": "1", "label": { "en": "Off", "nl": "Uit" } },
-            { "id": "2", "label": { "en": "On", "nl": "Aan" } }
+            { "id": "0", "label": { "en": "Auto", "nl": "Auto", "de": "Auto", "fr": "Auto" } },
+            { "id": "1", "label": { "en": "Off", "nl": "Uit", "de": "Aus", "fr": "Off" } },
+            { "id": "2", "label": { "en": "On", "nl": "Aan", "de": "Ein", "fr": "On" } }
           ]
         }
       ]
@@ -121,24 +153,30 @@
       "id": "set-grid-reverse",
       "title": {
         "en": "Set grid export mode",
-        "nl": "Netinjectie-modus instellen"
+        "nl": "Netinjectie-modus instellen",
+        "de": "Netzeinspeisungsmodus einstellen",
+        "fr": "Définir le mode d'exportation du réseau"
       },
       "titleFormatted": {
         "en": "Set grid export to [[mode]]",
-        "nl": "Netinjectie op [[mode]]"
+        "nl": "Netinjectie op [[mode]]",
+        "de": "Netzeinspeisung auf [[mode]]",
+        "fr": "Définir l'exportation du réseau sur [[mode]]"
       },
       "hint": {
         "en": "Atomic write of gridReverse. Disabled = no export, Allow = export enabled, Forbidden = firmware blocks export. Useful for negative-price tariffs (Tibber) where you want to stop exporting temporarily.",
-        "nl": "Schrijft alleen gridReverse. Uit = geen netinjectie, Toestaan = injectie aan, Verboden = firmware blokkeert injectie. Handig voor negatieve prijzen (Tibber) als je tijdelijk niet wil terugleveren."
+        "nl": "Schrijft alleen gridReverse. Uit = geen netinjectie, Toestaan = injectie aan, Verboden = firmware blokkeert injectie. Handig voor negatieve prijzen (Tibber) als je tijdelijk niet wil terugleveren.",
+        "de": "Nur gridReverse wird atomar geschrieben. Deaktiviert = keine Einspeisung, Erlaubt = Einspeisung aktiviert, Verboten = Firmware blockiert Einspeisung. Nützlich für negative Preistarife (Tibber), bei denen du temporär keine Einspeisung wünschst.",
+        "fr": "Écriture atomique de gridReverse. Désactivé = pas d'exportation, Autorisé = exportation activée, Interdit = le firmware bloque l'exportation. Utile pour les tarifs à prix négatif (Tibber) lorsque tu veux arrêter temporairement l'exportation."
       },
       "args": [
         {
           "type": "dropdown",
           "name": "mode",
           "values": [
-            { "id": "0", "label": { "en": "Disabled", "nl": "Uitgeschakeld" } },
-            { "id": "1", "label": { "en": "Allow", "nl": "Toestaan" } },
-            { "id": "2", "label": { "en": "Forbidden", "nl": "Verboden" } }
+            { "id": "0", "label": { "en": "Disabled", "nl": "Uitgeschakeld", "de": "Deaktiviert", "fr": "Désactivé" } },
+            { "id": "1", "label": { "en": "Allow", "nl": "Toestaan", "de": "Erlaubt", "fr": "Autorisé" } },
+            { "id": "2", "label": { "en": "Forbidden", "nl": "Verboden", "de": "Verboten", "fr": "Interdit" } }
           ]
         }
       ]

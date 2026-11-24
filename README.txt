@@ -1,4 +1,4 @@
-Control your Zendure batteries directly via the home network, without the need for an internet or Zendure's cloud services.
+Control your Zendure batteries directly via the home network, without the need for an internet connection or Zendure's cloud services.
 
 This app supports the Zendure Solarflow Batteries and the Zendure energy meter.
 

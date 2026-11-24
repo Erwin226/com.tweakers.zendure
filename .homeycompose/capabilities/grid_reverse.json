@@ -1,10 +1,30 @@
 {
   "type": "enum",
-  "title": { "en": "Grid export", "nl": "Netinjectie" },
+  "title": { 
+    "en": "Grid export", 
+    "nl": "Netinjectie",
+    "de": "Netzeinspeisung",
+    "fr": "Injection réseau"
+  },
   "values": [
-    { "id": "0", "title": { "en": "Disabled", "nl": "Uitgeschakeld" } },
-    { "id": "1", "title": { "en": "Allow", "nl": "Toestaan" } },
-    { "id": "2", "title": { "en": "Forbidden", "nl": "Verboden" } }
+    { "id": "0", "title": { 
+      "en": "Disabled", 
+      "nl": "Uitgeschakeld" ,
+      "de": "Deaktiviert",
+      "fr": "Désactivé"
+      } },
+    { "id": "1", "title": { 
+      "en": "Allow", 
+      "nl": "Toestaan",
+      "de": "Erlauben",
+      "fr": "Autorisé"
+      } },
+    { "id": "2", "title": { 
+      "en": "Forbidden", 
+      "nl": "Verboden",
+      "de": "Verboten",
+      "fr": "Interdit"
+      } }
   ],
   "uiComponent": "picker",
   "getable": true,
